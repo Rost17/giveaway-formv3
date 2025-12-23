@@ -57,7 +57,7 @@ export default function GiveawayForm() {
             body: JSON.stringify({ subscriberId, phone }),
         });
         setLoading(false);
-        setStep(4);
+        setStep(3);
     };
 
     // --- RENDER HELPERS ---
@@ -116,43 +116,13 @@ export default function GiveawayForm() {
                     </div>
                 )}
 
-                {/* --- STEP 2: REPLY --- */}
+                {/* --- STEP 2: PHONE (WAS STEP 3) --- */}
                 {step === 2 && (
                     <div>
                         <ProgressBar percent={40} label="2X Entries" />
-                        <div className="flex justify-center mb-4"><div className="text-4xl">✅</div></div>
-                        <h2 className="text-xl font-bold mb-2">You're In! Now Confirm Your Email</h2>
-                        <p className="text-gray-600 mb-4"><span className="bg-yellow-100 font-bold text-orange-600">+2X Entries</span></p>
-
-                        {/* IMAGE MOCKUP */}
-                        <div className="bg-blue-50 p-4 border rounded mb-4 text-sm">
-                            <p className="font-bold mb-2">📬 Check your inbox for this email:</p>
-                            <div className="border bg-white p-2 mb-2">
-                                {/* Ensure email-header.png is in your public folder */}
-                                <img src="/email-header.png" alt="Email Header" className="w-full" />
-                            </div>
-                            <p className="mb-2">Reply to that email with:</p>
-                            <p className="text-blue-600 font-mono font-bold mb-2">KICKOFF</p>
-                            <div className="bg-yellow-100 p-2 text-gray-500 italic">Waiting for your reply...</div>
-                        </div>
-
-                        <button
-                            onClick={() => handleTagAction(TAG_IDS.replied, 3)}
-                            disabled={loading}
-                            className="w-full bg-green-100 border-2 border-black py-3 font-bold hover:bg-green-200"
-                        >
-                            {loading ? "Processing..." : "I Replied, Show Me Step 3"}
-                        </button>
-                    </div>
-                )}
-
-                {/* --- STEP 3: PHONE --- */}
-                {step === 3 && (
-                    <div>
-                        <ProgressBar percent={60} label="3X Entries" />
                         <h2 className="text-xl font-bold mb-2">📱 Add Your Mobile Number</h2>
                         <p className="text-gray-600 mb-2">Get text reminders for daily content + prizes!</p>
-                        <p className="text-orange-600 font-bold mb-4">+1X Entries <span className="text-gray-500 font-normal">(You'll have 3X total!)</span></p>
+                        <p className="text-orange-600 font-bold mb-4">+1X Entries <span className="text-gray-500 font-normal">(You'll have 2X total!)</span></p>
 
                         <div className="mb-4">
                             <PhoneInput
@@ -188,10 +158,40 @@ export default function GiveawayForm() {
                             {loading ? "Processing..." : "Add My Number"}
                         </button>
                         <button
-                            onClick={() => setStep(4)}
+                            onClick={() => setStep(3)}
                             className="w-full bg-white border-2 border-black py-3 font-bold hover:bg-gray-100"
                         >
                             Skip This Step
+                        </button>
+                    </div>
+                )}
+
+                {/* --- STEP 3: REPLY (WAS STEP 2) --- */}
+                {step === 3 && (
+                    <div>
+                        <ProgressBar percent={60} label="4X Entries" />
+                        <div className="flex justify-center mb-4"><div className="text-4xl">✅</div></div>
+                        <h2 className="text-xl font-bold mb-2">You're In! Now Confirm Your Email (The Email May Take a Minute To Arrive - Please Check Your "Promotions" Folder)</h2>
+                        <p className="text-gray-600 mb-4"><span className="bg-yellow-100 font-bold text-orange-600">+2X Entries</span></p>
+
+                        {/* IMAGE MOCKUP */}
+                        <div className="bg-blue-50 p-4 border rounded mb-4 text-sm">
+                            <p className="font-bold mb-2">📬 Check your inbox for this email:</p>
+                            <div className="border bg-white p-2 mb-2">
+                                {/* Ensure email-header.png is in your public folder */}
+                                <img src="/email-header.png" alt="Email Header" className="w-full" />
+                            </div>
+                            <p className="mb-2">Reply to that email with:</p>
+                            <p className="text-blue-600 font-mono font-bold mb-2">KICKOFF</p>
+                            <div className="bg-yellow-100 p-2 text-gray-500 italic">Waiting for your reply...</div>
+                        </div>
+
+                        <button
+                            onClick={() => handleTagAction(TAG_IDS.replied, 4)}
+                            disabled={loading}
+                            className="w-full bg-green-100 border-2 border-black py-3 font-bold hover:bg-green-200"
+                        >
+                            {loading ? "Processing..." : "I Replied, Show Me Step 4"}
                         </button>
                     </div>
                 )}
