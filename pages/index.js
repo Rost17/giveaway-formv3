@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import Head from 'next/head';
+import { PhoneInput } from 'react-international-phone';
+import 'react-international-phone/style.css';
 
 export default function GiveawayForm() {
     const [step, setStep] = useState(1);
@@ -83,9 +85,7 @@ export default function GiveawayForm() {
 
                 {/* HEADER */}
                 <div className="text-center mb-8">
-                    <div className="bg-yellow-300 inline-block px-2 text-xl font-bold mb-4">
-                        PAGE {step === 6 ? 6 : step}
-                    </div>
+
                     <h1 className="text-3xl font-bold mb-2">The 2026 Kickoff Giveaway</h1>
                     <p className="text-gray-700">7 Days | 7 Prizes | $7,000 in Tech</p>
                 </div>
@@ -154,13 +154,31 @@ export default function GiveawayForm() {
                         <p className="text-gray-600 mb-2">Get text reminders for daily content + prizes!</p>
                         <p className="text-orange-600 font-bold mb-4">+1X Entries <span className="text-gray-500 font-normal">(You'll have 3X total!)</span></p>
 
-                        <input
-                            type="tel"
-                            placeholder="Phone Number"
-                            className="w-full p-3 border-2 border-black mb-4"
-                            value={phone}
-                            onChange={(e) => setPhone(e.target.value)}
-                        />
+                        <div className="mb-4">
+                            <PhoneInput
+                                defaultCountry="us"
+                                value={phone}
+                                onChange={(phone) => setPhone(phone)}
+                                inputStyle={{
+                                    width: '100%',
+                                    paddingTop: '12px',
+                                    paddingBottom: '12px',
+                                    paddingLeft: '12px',
+                                    height: '50px',
+                                    fontSize: '16px',
+                                    border: '2px solid black',
+                                    borderRadius: '0px'
+                                }}
+                                countrySelectorStyleProps={{
+                                    style: {
+                                        height: '50px',
+                                        border: '2px solid black',
+                                        borderRight: 'none',
+                                        borderRadius: '0px'
+                                    }
+                                }}
+                            />
+                        </div>
 
                         <button
                             onClick={handlePhoneSubmit}
