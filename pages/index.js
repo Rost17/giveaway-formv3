@@ -120,7 +120,7 @@ export default function GiveawayForm() {
                 {step === 2 && (
                     <div>
                         <ProgressBar percent={40} label="2X Entries" />
-                        <h2 className="text-xl font-bold mb-2">📱 Add Your Mobile Number</h2>
+                        <h2 className="text-xl font-bold mb-2">📱 Add Your Cellphone Number</h2>
                         <p className="text-gray-600 mb-2">Get text reminders for daily content + prizes!</p>
                         <p className="text-orange-600 font-bold mb-4">+1X Entries <span className="text-gray-500 font-normal">(You'll have 2X total!)</span></p>
 
