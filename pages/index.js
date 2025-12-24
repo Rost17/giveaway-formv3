@@ -87,7 +87,7 @@ export default function GiveawayForm() {
                 <div className="text-center mb-8">
 
                     <h1 className="text-3xl font-bold mb-2">The 2026 Kickoff Giveaway</h1>
-                    <p className="text-gray-700">7 Days | 7 Prizes | $7,000 in Tech</p>
+                    <p className="text-gray-700">7 Days | 7 Prizes | $10,000 in Tech</p>
                 </div>
 
                 {/* --- STEP 1: EMAIL --- */}
