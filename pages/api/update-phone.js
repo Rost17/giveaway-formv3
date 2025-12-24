@@ -10,7 +10,7 @@ export default async function handler(req, res) {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 api_secret: API_SECRET,
-                fields: { "Cellphone": phone } // 'Cellphone' maps to your custom field key
+                fields: { "cellphone": phone } // 'cellphone' maps to your custom field key
             }),
         });
 
