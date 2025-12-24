@@ -271,7 +271,20 @@ export default function GiveawayForm() {
                     <div className="text-center">
                         <div className="text-6xl mb-4">🎉</div>
                         <h1 className="text-3xl font-bold mb-4">All Done! Thanks For Entering!</h1>
-                        <p className="text-xl font-bold text-gray-800">Keep a close eye on your inbox for important daily updates...</p>
+                        <p className="text-xl font-bold text-gray-800 mb-6">Keep a close eye on your inbox for important daily updates...</p>
+
+                        <div className="border-t border-gray-300 pt-6 mt-6">
+                            <p className="text-lg text-gray-700 mb-4">
+                                Now, head over to Online Marketing Classroom for all types of strategies, guides and tips you can start using now to make your 2026 the best year yet!
+                            </p>
+                            <a
+                                href="https://onlinemarketingclassroom.com/blog/"
+                                target="_blank"
+                                className="inline-block bg-orange-500 text-white font-bold py-3 px-8 rounded hover:bg-orange-600 transition-colors"
+                            >
+                                Go Here Now!
+                            </a>
+                        </div>
                     </div>
                 )}
 
